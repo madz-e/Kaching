@@ -29,7 +29,6 @@ class ExpenseController extends Controller
 
     public function store(ExpenseRequest $request)
     {
-//        dd($request->all());
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
             'amount' => 'required|numeric|min:0.01',
